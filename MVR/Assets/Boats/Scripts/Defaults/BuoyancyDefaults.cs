@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace MVR.Boats
 {
+    /// <summary>
+    /// Class to store the default settings for buoyancy objects
+    /// </summary>
     [System.Serializable]
     public class BuoyancyDefaults
     {

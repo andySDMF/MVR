@@ -7,17 +7,20 @@ namespace MVR.Boats
     [RequireComponent(typeof(Rigidbody))]
     public class Buoyancy : MonoBehaviour
     {
-        public BuoyancyDefaults buoyancyControl;
+        [SerializeField]
+        protected BuoyancyDefaults buoyancyControl;
 
         [Header("Float Data")]
-        public bool includeThisTransform = true;
-        public List<Transform> floaters;
+        [SerializeField]
+        protected bool includeThisTransform = true;
+        [SerializeField]
+        protected List<Transform> floaters;
 
-        Rigidbody m_rigidbody;
-        bool isUnderwater = false;
-        int floatersUnderwater;
+        private Rigidbody m_rigidbody;
+        private bool isUnderwater = false;
+        private int floatersUnderwater;
 
-        void Awake()
+        private void Awake()
         {
             m_rigidbody = GetComponent<Rigidbody>();
 
@@ -27,16 +30,18 @@ namespace MVR.Boats
             }
         }
 
-        void FixedUpdate()
+        private void FixedUpdate()
         {
             floatersUnderwater = 0;
 
+            //loop through all the floaters
             for(int i = 0; i < floaters.Count; i++)
             {
                 float difference = floaters[i].position.y - buoyancyControl.waterHeight;
 
                 if (difference < 0)
                 {
+                    // add for to the floater if below water
                     m_rigidbody.AddForceAtPosition(Vector3.up * buoyancyControl.floatingPower * Mathf.Abs(difference), floaters[i].position, ForceMode.Force);
 
                     floatersUnderwater += 1;
@@ -57,8 +62,9 @@ namespace MVR.Boats
 
         }
 
-        void SwitchWaterState(bool underwater)
+        private  void SwitchWaterState(bool underwater)
         {
+            // change rigidbody drags based on underwater state
             if(underwater)
             {
                 m_rigidbody.drag = buoyancyControl.underwaterDrag;
