@@ -660,7 +660,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 58.106262, z: 0.09999993}
+  m_Size: {x: 7, y: 60, z: 0.09999993}
   m_Center: {x: -89.90405, y: -126.152885, z: 2.5500007}
 --- !u!1 &684657477 stripped
 GameObject:
@@ -1249,7 +1249,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.058558926, y: 0.92581695, z: -0.16088943, w: -0.33696958}
+  m_LocalRotation: {x: -0.058558922, y: 0.92581695, z: -0.16088943, w: -0.33696958}
   m_LocalPosition: {x: 613.7935, y: -177.65501, z: 276.2857}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1723,6 +1723,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289559246}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1356924200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 168967463019327878, guid: 59b8898b7b658584e88d7f2c2ae72da1, type: 3}
+  m_PrefabInstance: {fileID: 863599783}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1356924204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356924200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.917843, y: 12.212844, z: 4.5102057}
+  m_Center: {x: -12.340284, y: -70.21091, z: 6.6007466}
 --- !u!4 &1410197951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6996018941902874442, guid: 1f2e276649628484dac4cec34cf08e08, type: 3}
@@ -3076,7 +3094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7031559787193992003, guid: ea1a3968edc9e1e4f8b3c155f6a32515, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000011920929
+      value: -0.00000014901161
       objectReference: {fileID: 0}
     - target: {fileID: 7031559787193992003, guid: ea1a3968edc9e1e4f8b3c155f6a32515, type: 3}
       propertyPath: m_LocalRotation.z
