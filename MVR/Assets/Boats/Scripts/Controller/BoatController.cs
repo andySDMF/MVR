@@ -24,7 +24,7 @@ namespace MVR.Boats
         private void Awake()
         {
             m_rigidbody = GetComponent<Rigidbody>();
-            m_startRotation = motor.rotation;
+            m_startRotation = motor.localRotation;
         }
 
         private void FixedUpdate()
@@ -65,7 +65,7 @@ namespace MVR.Boats
             m_rigidbody.AddForceAtPosition(movemnt * transform.forward * boatPower, motor.position);
 
             // sets rotation of the motor visuals
-            motor.SetPositionAndRotation(motor.position, transform.rotation * m_startRotation * Quaternion.Euler(0, 30.0f * steer, 0));
+            motor.SetPositionAndRotation(motor.position, transform.localRotation * m_startRotation * Quaternion.Euler(0, 30.0f * steer, 0));
         }
     }
 }

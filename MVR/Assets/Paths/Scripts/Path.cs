@@ -46,7 +46,10 @@ namespace MVR.Paths
             }
         }
 
-        protected virtual float MaxPos
+        /// <summary>
+        /// Returns max number of positions along the path
+        /// </summary>
+        public virtual float MaxPos
         {
             get
             {
@@ -69,6 +72,13 @@ namespace MVR.Paths
             }
         }
 
+        /// <summary>
+        /// Called to place and object along the spline at a given point
+        /// Max number of points is the paht length
+        /// </summary>
+        /// <param name="distanceAlongPath"></param>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public float SetObjectPositionAlongPath(float distanceAlongPath, Transform obj)
         {
             float pos = 0f;
@@ -169,7 +179,12 @@ namespace MVR.Paths
             return result;
         }
 
-
+        /// <summary>
+        /// Returns a standard distance along a path between 0 and max number of points
+        /// </summary>
+        /// <param name="distance"></param>
+        /// <param name="waypoints"></param>
+        /// <returns></returns>
         protected float StandardizePathDistance(float distance, Transform[] waypoints)
         {
             float length = MaxPos;
@@ -189,6 +204,12 @@ namespace MVR.Paths
             return Mathf.Clamp(distance, 0, length);
         }
 
+        /// <summary>
+        /// Returns the modular position along the path between 0 and max numbe rof points
+        /// </summary>
+        /// <param name="pos"></param>
+        /// <param name="waypoints"></param>
+        /// <returns></returns>
         protected float StandardizePos(float pos, Transform[] waypoints)
         {
             if (closePath && MaxPos > 0)
@@ -202,6 +223,14 @@ namespace MVR.Paths
             return Mathf.Clamp(pos, 0, MaxPos);
         }
 
+        /// <summary>
+        /// Wraps a position wihtin the bounding area of the spline
+        /// </summary>
+        /// <param name="pos"></param>
+        /// <param name="indexA"></param>
+        /// <param name="indexB"></param>
+        /// <param name="waypoints"></param>
+        /// <returns></returns>
         protected float GetBoundingIndices(float pos, out int indexA, out int indexB, Transform[] waypoints)
         {
             pos = StandardizePos(pos, waypoints);

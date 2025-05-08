@@ -10,6 +10,9 @@ namespace MVR.Paths
         private  float speed = 1;
         [SerializeField]
         private Path path;
+        [SerializeField]
+        [Range(0.0f,1.0f)]
+        private float normalizedStartingPoint = 0.0f;
 
         private float m_posiiton = 0.0f;
 
@@ -17,6 +20,7 @@ namespace MVR.Paths
         {
             if (path != null)
             {
+                m_posiiton = path.MaxPos * normalizedStartingPoint;
                 m_posiiton = path.SetObjectPositionAlongPath(m_posiiton, transform);
             }
         }
