@@ -236,7 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2852383367799276154}
   m_Layer: 0
-  m_Name: Boat_AI_Sunseeker
+  m_Name: Boat_Sunseeker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
